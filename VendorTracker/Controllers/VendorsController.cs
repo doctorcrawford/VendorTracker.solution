@@ -39,19 +39,19 @@ namespace VendorTracker.Controllers
       return View(model);
     }
 
-    // [HttpPost("/vendors/{vendorId}/orders")]
-    // public ActionResult Create(int vendorId, string orderTitle, string orderDescription, float orderPrice, DateTime orderDate)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Vendor foundVendor = Vendor.Find(vendorId);
-    //   DateOnly orderDateOnly = DateOnly.FromDateTime(orderDate);
-    //   Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDateOnly);
-    //   foundVendor.AddOrder(newOrder);
-    //   List<Order> categoryOrders = foundVendor.Orders;
-    //   model.Add("vendor", foundVendor);
-    //   model.Add("orders", categoryOrders);
-    //   return View("Show", model);
-    // }
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, float orderPrice, DateTime orderDate)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      DateOnly orderDateOnly = DateOnly.FromDateTime(orderDate);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDateOnly);
+      foundVendor.AddOrder(newOrder);
+      List<Order> categoryOrders = foundVendor.Orders;
+      model.Add("vendor", foundVendor);
+      model.Add("orders", categoryOrders);
+      return View("Show", model);
+    }
 
   }
 }
