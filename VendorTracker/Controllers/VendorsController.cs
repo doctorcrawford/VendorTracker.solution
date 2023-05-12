@@ -53,5 +53,11 @@ namespace VendorTracker.Controllers
       return View("Show", model);
     }
 
+    [HttpGet("/vendors/{vendorId}/orders")]
+    public ActionResult Show(Dictionary<string, object> model)
+    {
+      return View(model);
+    }
+    
   }
 }
