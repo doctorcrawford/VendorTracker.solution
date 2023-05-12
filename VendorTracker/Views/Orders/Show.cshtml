@@ -2,17 +2,21 @@
   Layout = "_Layout";
 }
 
-<h1>Vendor Tracker Order Details: </h1>
+<div class="basic">
+  <h1>Order Details: </h1>
 
-<h2>Vendor: @Model["vendor"].Name</h2>
-<h3>Order Title: @Model["order"].Title</h3>
-<h5>Order Description: @Model["order"].Description</h5>
-<h5>Price: $@Model["order"].Price</h5>
-<h5>Order Date: @Model["order"].Date</h5>
+  <h2>Vendor: @Model["vendor"].Name</h2>
+  <h3>Order Title: @Model["order"].Title</h3>
+  <h5>Order Description: @Model["order"].Description</h5>
+  <h5>Price: $@Model["order"].Price</h5>
+  <h5>Order Date: @Model["order"].Date</h5>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order to @Model["vendor"].Name's account</a>
-<br>
-<input type="hidden" name="model" value="@Model">
-<a href='/vendors/@Model["vendor"].Id/orders'>Go back to @Model["vendor"].Name's order list</a>
-<br>
-<a href='/vendors'>View all vendors</a>
+  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order to @Model["vendor"].Name's account</a>
+  <br>
+  <a href='/vendors/@Model["vendor"].Id/orders'>Go back to @Model["vendor"].Name's order list</a>
+</div>
+
+<div class="basic">
+  <input type="hidden" name="model" value="@Model">
+  <a href='/vendors'>View all vendors</a>
+</div>

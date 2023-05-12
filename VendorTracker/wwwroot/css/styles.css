@@ -1,21 +1,25 @@
 body {
   background-color: #A3BBAD;
+  text-align: center;
 }
 
 h1 {
+  text-align: left;
   color: #312509;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 a {
   color: #eccc61;
 }
 
-#home {
+.basic {
   text-align: center;
-  width: 50%;
+  width: fit-content;
   margin: auto;
   margin-top: 2rem;
-  padding: .5rem;
+  padding: 1.5rem;
   border: 2px solid #0E3B43;
 }
 
@@ -30,6 +34,8 @@ div#footer {
 }
 
 img {
-  height: 100px;
+  height: 200px;
+  width: 100%;
   opacity: .5;
+  object-fit: cover;
 }
